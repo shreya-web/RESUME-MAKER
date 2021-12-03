@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+      integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="forms.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="text-center bg-primary">RESUME GENERATOR</h1>
+      <h2 class="text-center bg-success">
+        PLEASE ENTER YOUR DETAILS ONE BY ONE TO GET TO YOUR RESUME
+      </h2>
+      <div class="box">
+        <form id="subnewtopicform" name="myForm" autocomplete="off">
+          <div class="form-group has-warning">
+            <label for="Name">NAME:</label>
+            <input
+              type="name"
+              class="form-control"
+              id="Name"
+              placeholder="NAME"
+              name="NAME"
+              required
+            />
+          </div>
+          <div class="form-group has-warning">
+            <label for="CONTACT">CONTACT:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="CONTACT"
+              placeholder="YOUR CONTACT"
+              name="CONTACT"
+              required
+            />
+          </div>
+          <div class="form-group has-warning">
+            <label for="EMAIL">EMAIL:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="EMAIL"
+              name="EMAIL"
+              placeholder="YOUR EMAIL"
+              required
+            />
+          </div>
+
+          <div class="form-group has-warning">
+            <label for="DESIGNATION">DESIGNATION:</label>
+            <input
+              type="name"
+              class="form-control"
+              id="Desigantion"
+              name="DESIGNATION"
+              placeholder="DESIGNATION"
+              required
+            />
+          </div>
+          <div class="form-group has-warning">
+            <label for="WORK_EXP">EXPERIENCE:</label>
+            <textarea
+              class="form-control"
+              placeholder="WORK EXPERIENCE"
+              id="WORKEXP"
+              rows="5"
+              name="WORKEXPERIENCE"
+              type="name"
+              required
+              onkeyup="if(this.textLength != 0) {register.disabled = true} else {register.disabled = fals}"
+            ></textarea>
+          </div>
+          <div class="form-group has-warning">
+            <label for="ACADEMICS">ACADEMICS:</label>
+            <textarea
+              class="form-control"
+              placeholder="ACADEMICS"
+              id="ACADEMICS"
+              rows="5"
+              type="name"
+              name="ACADEMICS"
+              required
+              onkeyup="if(this.textLength != 0) {register.disabled = true} else {register.disabled = false}"
+            ></textarea>
+          </div>
+          <div class="form-group has-warning">
+            <label for="SKILLS">SKILLS:</label>
+            <textarea
+              class="form-control"
+              placeholder="SKILLS"
+              id="SKILLS"
+              rows="5"
+              name="SKILLS"
+              type="name"
+              required
+              onkeyup="if(this.textLength != 0) {register.disabled = true} else {register.disabled = false}"
+            ></textarea>
+          </div>
+          <div class="form-group has-warning">
+            <label for="PROJECTS">PROJECTS:</label>
+            <textarea
+              class="form-control"
+              type="name"
+              placeholder="PROJECTS"
+              rows="5"
+              name="PROJECTS"
+              id="PROJECTS"
+              required
+              onkeyup="if(this.textLength != 0) {register.disabled = true} else {register.disabled = false}"
+            ></textarea>
+          </div>
+          <div class="form-group has-warning">
+            <label for="Name">INTERESTS:</label>
+            <input
+              type="name"
+              class="form-control"
+              id="INTERSTS"
+              name="INTERESTS"
+              placeholder="INTERESTS"
+              required
+            />
+          </div>
+          <input
+            type="button"
+            value="SUBMIT"
+            id="register"
+            class="btn btn-primary btn-lg"
+            disabled="disabled"
+            onclick="enableNum()"
+          />
+
+          <input
+            type="button"
+            value="GENERATE PDF"
+            id="GENERATE"
+            class="btn btn-primary btn-lg"
+            onclick="submitData()"
+            disabled="disabled"
+          />
+        </form>
+      </div>
+    </div>
+
+    <h2 class="text-center">PREVIEW OF THE FORM BELOW</h2>
+    <div id="boxes">
+      <div class="container">
+        <div class="header">
+          <div id="NAME">
+            <p>NAME</p>
+          </div>
+          <div class="CONTACT">
+            <span class="email">Email: </span>
+            <span id="email-val">YOUR EMAIL</span>
+            <span class="separator"></span>
+            <span class="phone">Phone: </span>
+            <span id="phone-val"> YOUR NUMBER</span>
+          </div>
+
+          <div class="about">
+            <span id="DESIGNATION">FILL IN YOUR DESIGNATION </span>
+            <span id="desc"> FILL IN YOUR DESCRIPTION </span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="section">
+            <div class="section__title">Experience</div>
+            <div class="section__list">
+              <div id="section__list-item2">
+                <span>FILL IN YOUR WORK EXPERIENCE</span>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="section__title">ACADEMIC DETAILS</div>
+            <div class="section__list">
+              <div id="section__list-item">FILL IN YOUR ACADEMIC DETAILS</div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section__title">Projects</div>
+          <div id="section__list">FILL IN YOUR PROJECTS</div>
+        </div>
+        <div class="section">
+          <div class="section__title">Skills</div>
+          <div id="skills">FILL IN YOUR SKILLS</div>
+        </div>
+        <div class="section">
+          <div class="section__title">Interests</div>
+          <div class="section__list">
+            <div id="section__list-item1">FILL IN YOUR INTERESTS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="html2pdf.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
